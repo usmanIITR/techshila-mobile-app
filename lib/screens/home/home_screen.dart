@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../utils/app_theme.dart';
 import '../../widgets/custom_button.dart';
 import '../connect/connect_screen.dart';
+import '../dashboard/dashboard_screen.dart';
 import 'bloc/home_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -76,7 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, state) {
         if (state is HomeInitial) {
           return Scaffold(
-            backgroundColor: AppTheme.whiteColor,
             appBar: AppBar(
               title: const Text('Tech-Shila'),
               centerTitle: true,
@@ -120,7 +120,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       margin: EdgeInsets.symmetric(
                                           vertical: height * 0.01),
                                       child: ListTile(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const DashboardScreen()));
+                                        },
                                         title: Text(
                                             _availableDevices[index]['title']!),
                                         subtitle: Text(_availableDevices[index]

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:techshila/widgets/custom_textfield.dart';
+import 'package:techshila/screens/home/bloc/home_bloc.dart';
 
-import '../../utils/app_theme.dart';
 import '../../widgets/custom_button.dart';
-import '../screens/home/bloc/home_bloc.dart';
-import '../screens/home/home_screen.dart';
+import '../home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  final TextEditingController _ipAddressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -30,7 +27,7 @@ class LoginScreen extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => BlocProvider(
+                builder: (context) => BlocProvider<HomeScreenBloc>(
                   create: (context) => HomeScreenBloc(),
                   child: const HomeScreen(),
                 ),
