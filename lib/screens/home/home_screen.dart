@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../utils/app_theme.dart';
+import '../../widgets/custom_button.dart';
 import '../connect/connect_screen.dart';
 import 'bloc/home_bloc.dart';
 
@@ -87,22 +88,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      color: AppTheme.mainFontColor,
+                    CustomButton(
                       height: height * 0.08,
+                      onPressed: () {},
                       width: width * 0.4,
+                      buttonText: 'Available Devices',
                       margin: EdgeInsets.symmetric(
                         vertical: height * 0.05,
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Available Devices',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: AppTheme.whiteColor,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
                       ),
                     ),
                     SingleChildScrollView(
@@ -139,30 +131,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                             ),
-                            GestureDetector(
-                              onTap: () {
+                            CustomButton(
+                              height: height * 0.08,
+                              width: width * 0.4,
+                              margin: EdgeInsets.symmetric(
+                                vertical: height * 0.05,
+                              ),
+                              onPressed: () {
                                 setState(() {
                                   _isExpanded = !_isExpanded;
                                 });
                               },
-                              child: Container(
-                                color: AppTheme.mainFontColor,
-                                height: height * 0.08,
-                                width: width * 0.4,
-                                margin: EdgeInsets.symmetric(
-                                  vertical: height * 0.05,
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    _isExpanded ? 'Show Less' : 'Show more',
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      color: AppTheme.whiteColor,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              buttonText:
+                                  _isExpanded ? 'Show Less' : 'Show more',
                             ),
                           ],
                         ),
@@ -181,8 +162,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 decoration: TextDecoration.underline),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
+                        CustomButton(
+                          height: height * 0.08,
+                          width: width * 0.8,
+                          onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -190,24 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             );
                           },
-                          child: Container(
-                            color: AppTheme.mainFontColor,
-                            height: height * 0.08,
-                            width: width * 0.8,
-                            margin: EdgeInsets.symmetric(
-                              vertical: height * 0.005,
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Connect to new device',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: AppTheme.whiteColor,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                          ),
+                          buttonText: 'Connect to new device',
                         ),
                       ],
                     ),

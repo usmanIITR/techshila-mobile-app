@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:techshila/widgets/custom_textfield.dart';
 
 import '../../utils/app_theme.dart';
+import '../../widgets/custom_button.dart';
 
 class ConnectScreen extends StatelessWidget {
   ConnectScreen({super.key});
@@ -80,20 +81,11 @@ class ConnectScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Container(
-                color: AppTheme.mainFontColor,
+              CustomButton(
                 height: height * 0.08,
                 width: width,
-                child: const Center(
-                  child: Text(
-                    'Available Devices',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: AppTheme.whiteColor,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
+                onPressed: () {},
+                buttonText: 'Connect',
               ),
             ],
           ),

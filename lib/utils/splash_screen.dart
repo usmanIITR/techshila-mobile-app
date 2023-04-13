@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:techshila/screens/home/home_screen.dart';
 
 import '../screens/home/bloc/home_bloc.dart';
-import 'app_theme.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -41,10 +40,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.whiteColor,
       body: Center(
         child: Image.asset(
-          'assetName',
+          'assets/images/appIcon.jpeg',
+          fit: BoxFit.contain,
+          height: 200,
+          width: 200,
           errorBuilder: (context, object, st) {
             return const SizedBox(
               child: Text('Error Occured'),
