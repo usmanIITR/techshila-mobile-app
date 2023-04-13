@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:techshila/screens/home/home_screen.dart';
-
-import '../screens/home/bloc/home_bloc.dart';
+import 'package:techshila/login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -27,10 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => BlocProvider(
-              create: (context) => HomeScreenBloc(),
-              child: const HomeScreen(),
-            ),
+            builder: (context) => LoginScreen(),
           ),
         );
       },

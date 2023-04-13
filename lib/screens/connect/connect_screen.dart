@@ -14,7 +14,6 @@ class ConnectScreen extends StatelessWidget {
     final padding = MediaQuery.of(context).viewPadding;
     height = height - padding.top - padding.bottom;
     return Scaffold(
-      backgroundColor: AppTheme.whiteColor,
       appBar: AppBar(
         title: const Text('Tech-Shila'),
         centerTitle: true,
